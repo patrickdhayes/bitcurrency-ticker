@@ -1,0 +1,31 @@
+<%- include("partials/header") -%>
+<h1>Bitcoin Ticker</h1>
+<p><%= price %></p>
+<form action="/" method="post">
+    <div class="form-group">
+        <label>Amount</label>
+        <input type="text" name="amount" placeholder="Quantity" />
+    </div>
+    
+    <div class="form-group">
+    <label>Bit Currency</label>
+    <select name="crypto">
+        <option value="BTC">Bitcoin</option>
+        <option value="ETH">Ethereum</option>
+        <option value="LTC">Litecoins</option>
+    </select>
+    </div>
+
+    <div class="form-group">
+    <label>Fiat</label>
+        <select name="fiat">
+            <option value="USD">US Dollars</option>
+            <option value="GBP">GB Pounds</option>
+            <option value="EUR">EU Euros</option>
+            <option value="NZD">NZ Dollars</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Check</button>
+</form>
+<%- include("partials/footer") -%>
