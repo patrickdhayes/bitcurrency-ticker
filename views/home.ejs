@@ -1,15 +1,15 @@
 <%- include("partials/header") -%>
 <h1>Bitcoin Ticker</h1>
-<p><%= results[0].price %></p>
+
 <form action="/" method="post">
     <div class="form-group">
         <label>Amount</label>
-        <input type="text" name="amount" placeholder="Quantity" />
+        <input type="text" name="amount" placeholder="Quantity" class="form-control" />
     </div>
     
     <div class="form-group">
     <label>Bit Currency</label>
-    <select name="crypto">
+    <select name="crypto" class="form-control">
         <option value="BTC">Bitcoin</option>
         <option value="ETH">Ethereum</option>
         <option value="LTC">Litecoins</option>
@@ -18,7 +18,7 @@
 
     <div class="form-group">
     <label>Fiat</label>
-        <select name="fiat">
+        <select name="fiat" class="form-control" class="form-control">
             <option value="USD">US Dollars</option>
             <option value="GBP">GB Pounds</option>
             <option value="EUR">EU Euros</option>

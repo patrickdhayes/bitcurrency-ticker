@@ -1,31 +1,14 @@
 <%- include("partials/header") -%>
-<h1>Bitcoin Ticker</h1>
-<p><%= price %></p>
-<form action="/" method="post">
-    <div class="form-group">
-        <label>Amount</label>
-        <input type="text" name="amount" placeholder="Quantity" />
-    </div>
-    
-    <div class="form-group">
-    <label>Bit Currency</label>
-    <select name="crypto">
-        <option value="BTC">Bitcoin</option>
-        <option value="ETH">Ethereum</option>
-        <option value="LTC">Litecoins</option>
-    </select>
-    </div>
 
-    <div class="form-group">
-    <label>Fiat</label>
-        <select name="fiat">
-            <option value="USD">US Dollars</option>
-            <option value="GBP">GB Pounds</option>
-            <option value="EUR">EU Euros</option>
-            <option value="NZD">NZ Dollars</option>
-        </select>
-    </div>
+<div class="jumbotron">
+  <h1 class="display-4">Bitcoin Exchange</h1>
+  <p class="lead">Get timely exchange rates for your fiat currency</p>
+  <hr class="my-4">
+  <p>The current date is: <%= results.currentDate %></p>
+  <p><%= results.amount %> <%= results.crypto %> is currently worth <%= results.price %> <%= results.fiat %></p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="/" role="button">HOME</a>
+  </p>
+</div>
 
-    <button type="submit" class="btn btn-primary">Check</button>
-</form>
 <%- include("partials/footer") -%>

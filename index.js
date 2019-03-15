@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const request = require("request");
-let results = [];
+let results = {};
 
 const app = express();
 
@@ -13,7 +13,11 @@ app.use(express.static("public"));
 
 app.get("/", function(req, res){
     // res.sendFile(__dirname + "/index.html");
-    res.render("home", {
+    res.render("home");
+});
+
+app.get("/results", function(req, res){
+    res.render("results", {
         results: results
     });
 });
@@ -37,15 +41,15 @@ app.post("/", function(req, res) {
     
         request(options, function(error, response, body){
         let data = JSON.parse(body);
-        const bitCurrencyInfo = {    
+        results = {    
             price: data.price,     
-            currentDate: data.time
+            currentDate: data.time,
+            crypto: crypto,
+            fiat: fiat,
+            amount: amount
         };
-        
-        
-        results.push(bitCurrencyInfo);
 
-        res.redirect("/");
+        res.redirect("/results");
         // res.write("<p>The current date is: " + currentDate + "</p>");
         // res.write("<h1>" + amount + " " + crypto + " is currently worth " + price + " " + fiat + "</h1>");
         // res.send();
